@@ -1,0 +1,60 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.P.all;
+
+entity lut_controller is
+	Port (
+			clk: in std_logic;
+			re: in std_logic;
+			we0: out std_logic := '1';
+			addr: out natural range 0 to 9;
+			we1, we2, we3, we4, we5, we6, we7, we8, we9: out std_logic := '0';
+		);
+end lut_controller;
+
+architecture cntr of lut_controller is 
+	shared variable count: natural range 0 to 9:= 0;
+begin
+
+	func: process (clk, re) is
+	if rising_edge(clk) then 
+		if count = 9 then 
+		count := 0;
+		if we9 = '1' then 
+		we0 <= '1';
+		we9 <= '0';
+		elsif we0 = '1' then 
+		we1 <= '1';
+		we0 <= '0';
+		elsif we1 = '1' then 
+		we2 <= '1';
+		we1 <= '0';
+		elsif we2 = '1' then 
+		we3 <= '1';
+		we2 <= '0';
+		elsif we3 = '1' then 
+		we4 <= '1';
+		we3 <= '0';
+		elsif we4 = '1' then 
+		we5 <= '1';
+		we4 <= '0';
+		elsif we5 = '1' then 
+		we6 <= '1';
+		we5 <= '0';
+		elsif we6 = '1' then 
+		we7 <= '1';
+		we6 <= '0';
+		elsif we7 = '1' then 
+		we8 <= '1';
+		we7 <= '0';
+		elsif we8 = '1' then 
+		we9 <= '1';
+		we8 <= '0';
+		end if;
+	else
+		count := count + 1;
+		addr <= count;
+	end if;
+	end func;
+
+end cntr;

@@ -1,0 +1,55 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+package P is 
+	type vec_array is array (0 to 9) of std_logic_vector(3 downto 0);
+	type thresholds is array (0 to 9) of std_logic_vector (7 downto 0);
+	type o_vec_array is array (0 to 9) of std_logic_vector (11 downto 0);
+end P;
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library work;
+use work.P.all;
+
+entity noise_box is 
+	Port(
+			clk: in std_logic;
+			re: in std_logic;
+			load: in std_logic_vector (3 downto 0);
+			switch: in natural;
+			noise: out vec_array
+			);
+end noise_box;
+
+architecture nse_bx of noise_box is
+ 
+	type memory is array (0 to 99) of vec_array;
+	shared variable memory_nb: memory;
+	
+begin
+
+	regulate_noise: process (re, switch) is
+	begin
+		if (re = '1' and switch = 0) then 
+			noise <= memory_nb(0);
+		else
+			noise <= memory_nb(switch);
+		end if;
+	end process regulate_noise;
+	
+	loading: process (clk) is 
+	variable count: natural := 0;
+	begin
+		if rising_edge(clk) then 
+			if (count < 100) then 
+				memory_nb((count - (count mod 10))/10)(count mod 10):= load;
+			end if;
+			count := count + 1;
+		end if;
+	end process loading;
+	
+end nse_bx;

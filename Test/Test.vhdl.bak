@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic.all;
+use ieee.numeric_std.all;
+library work;
+use work.P.all;
+
+entity test is
+	Port (
+			R0, R1, R2, R3, R4, R5, R6, R7, R8, R9: in vec_array;
+			x: in vec_array;
+			th: in thresholds;
+			noise: in vec_array);
+end test;
+
+architecture tst of test is 
+component mult is 
+	Port(
+		R0, R1, R2, R3, R4, R5, R6, R7, R8, R9: in vec_array;
+		x: in vec_array;
+		blip_m: out natural range 0 to 1023;
+		y: out o_vec_array
+		);
+end component mult;
+
+component noise_adder is 
+	Port(
+		noise: in vec_array;
+		inter_in_n: in o_vec_array;
+		continue_n: in natural range 0 to 1023;
+		blip_n: out natural range 0 to 1023;
+		inter_out_n: out ns_vec_array
+		);
+end component noise_adder;
+
+
+begin
+
+end tst;

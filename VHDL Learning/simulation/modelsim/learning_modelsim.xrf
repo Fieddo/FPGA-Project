@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/fadia/OneDrive/Documents/Study/MIT/Sophomore Summer/UROP Prof. Marin/FPGA/VHDL Learning/learning.vhd
+source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, C:/Users/fadia/OneDrive/Documents/Study/MIT/Sophomore Summer/UROP Prof. Marin/FPGA/VHDL Learning/db/learning.cbx.xml
+design_name = hard_block
+design_name = learning
+instance = comp, \~QUARTUS_CREATED_GND~I\, ~QUARTUS_CREATED_GND~I, learning, 1
+instance = comp, \F~output\, F~output, learning, 1
+instance = comp, \A~input\, A~input, learning, 1
+instance = comp, \C~input\, C~input, learning, 1
+instance = comp, \B~input\, B~input, learning, 1
+instance = comp, \F~0\, F~0, learning, 1
+instance = comp, \~QUARTUS_CREATED_UNVM~\, ~QUARTUS_CREATED_UNVM~, learning, 1
+instance = comp, \~QUARTUS_CREATED_ADC1~\, ~QUARTUS_CREATED_ADC1~, learning, 1

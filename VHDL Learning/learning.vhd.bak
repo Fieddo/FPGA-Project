@@ -1,0 +1,13 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity my_gate is 
+	port(
+		A, B, C: in std_logic;
+		F: out std_logic);
+end my_gate;
+
+architecture my_gate_arc of my_gate is
+	begin 
+		F <= A or B or C;
+	end my_gate_arc;

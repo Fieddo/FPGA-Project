@@ -1,0 +1,45 @@
+# Reading C:/intelFPGA_lite/16.1/modelsim_ase/tcl/vsim/pref.tcl
+# do learning_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/16.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/fadia/OneDrive/Documents/Study/MIT/Sophomore Summer/UROP Prof. Marin/FPGA/VHDL Learning/learning.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:48:40 on Jul 05,2018
+# vcom -reportprogress 300 -93 -work work C:/Users/fadia/OneDrive/Documents/Study/MIT/Sophomore Summer/UROP Prof. Marin/FPGA/VHDL Learning/learning.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity learning
+# -- Compiling architecture my_gate_arc of learning
+# End time: 13:48:40 on Jul 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.learning
+# vsim work.learning 
+# Start time: 13:48:51 on Jul 05,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.learning(my_gate_arc)
+force -freeze sim:/learning/A 0 0
+force -freeze sim:/learning/B 1 0
+force -freeze sim:/learning/C 0 0
+run
+run
+run
+run
+force -freeze sim:/learning/B 0 0
+run
+run
+run
+run
+# End time: 14:14:51 on Jul 05,2018, Elapsed time: 0:26:00
+# Errors: 0, Warnings: 0

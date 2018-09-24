@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library work;
+use work.P.all;
+
+entity dot_mult_par is 
+	Port (a, b: in vec_array;
+			c: out thresholds);
+end dot_mult_par;
+
+architecture parallel of dot_mult_par is 
+
+component wise_mult is 
+	Port(
+			a, b: in vec_array;
+			c: out thresholds
+			);
+end component wise_mult;
+
+component layer_sum_1 is
+	Port (
+			a: in thresholds;
+			c: out sum_layer_1);
+end component layer_sum_1;
+
+begin
+	
+
+end parallel;

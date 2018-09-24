@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sun Aug 26 19:46:09 2018
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : single_port_ram
+Top-level Entity Name : noise_box
+Family : MAX 10
+Total logic elements : 569
+    Total combinational functions : 569
+    Dedicated logic registers : 34
+Total registers : 34
+Total pins : 56
+Total virtual pins : 0
+Total memory bits : 40,960
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

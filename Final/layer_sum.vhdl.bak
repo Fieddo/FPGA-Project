@@ -1,0 +1,37 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.P.all;
+
+entity layer_sum is
+	Port (
+			a: in thresholds;
+			c: out o_vec_array);
+end layer_sum;
+
+architecture layer_1 is 
+begin
+	c(0) <= std_logic_vector (unsigned(a(0)) + unsigned(a(1)));
+	c(1) <= std_logic_vector (unsigned(a(2)) + unsigned(a(3)));
+	c(2) <= std_logic_vector (unsigned(a(4)) + unsigned(a(5)));
+	c(3) <= std_logic_vector (unsigned(a(6)) + unsigned(a(7)));
+	c(4) <= std_logic_vector (unsigned(a(8)) + unsigned(a(9)));
+end layer_1;
+
+architecture layer_2 is 
+begin
+	c(0) <= std_logic_vector (unsigned(a(0)) + unsigned(a(1)));
+	c(1) <= std_logic_vector (unsigned(a(2)) + unsigned(a(3)));
+	c(2) <= a(4);
+end layer_2;
+
+architecture layer_3 is
+begin
+	c(0) <= std_logic_vector (unsigned(a(0)) + unsigned(a(1)));
+	c(1) <= a(2);
+end layer_3;
+
+architecture layer_4 is 
+begin
+	c(0) <= std_logic_vector (unsigned(a(0)) + unsigned(a(1)));
+end layer_4;

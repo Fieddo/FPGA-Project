@@ -1,0 +1,21 @@
+library ieee;
+use ieee.logic_std_1164.all;
+use work.P.all;
+
+entity summer is 
+	Port(
+		R: in vec_array;
+		th: out std_logic_vector (7 downto 0));
+end summer;
+
+architecture arc of summer is 
+	shared variable result: std_logic_vector (7 downto 0) := "00000000";
+begin
+	summ: process (R) is 
+	begin
+		for i in range 0 to 9 loop
+			result := std_logic_vector(unsigned(result) + unsigned(R(i)))
+		end loop;
+	th <= result;
+	end summ;
+end arc;
